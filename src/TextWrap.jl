@@ -28,7 +28,7 @@ function _expand_tabs(text::AbstractString, i0::Int)
             i = (i + 1) % 8
         end
     end
-    return takebuf_string(out_buf)
+    return String(take!(out_buf))
 end
 
 function _check_width(width::Integer)
@@ -255,7 +255,7 @@ end
                     width, initial_indent, subsequent_indent,
                     break_on_hyphens, break_long_words)
     end
-    return takebuf_string(out_str)
+    return String(take!(out_str))
 end
 
 # print functions signature:
